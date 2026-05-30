@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invers Matriks</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <div class="header-top">
+    <div class="header-info">
+      <div class="header-badge">Waktu Indonesia Barat</div>
+      <div class="header-time" id="dateTimeLabel">Mengambil waktu...</div>
+    </div>
+    <div class="theme-actions">
+      <button class="theme-toggle" id="themeToggle" data-tooltip="Klik untuk beralih tema" onclick="toggleTheme()">
+        <span class="theme-icon" id="themeIcon">🌙</span>
+        <span id="themeLabel">Gelap</span>
+      </button>
+      <div class="taskbar-mini-wrap" id="taskbarMiniWrap">
+        <button class="mini-taskbar" id="miniTaskbar" onclick="openAdPopup()" data-tooltip="Buka iklan proyek">🗔</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-note">
+    Project ini sangat berguna buat kalian semua para mahasiswa Universitas Hasyim Asy'ari Tebuireng Jombang dan juga para Bapak Ibu Dosen yang tidak ingin ribet untuk menghitungnya......
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-label">Proyek Matematika · Aljabar Linear</div>
+    <h1>Invers<br><span>Matriks</span></h1>
+    <div class="divider"></div>
+    <div class="header-sub">Kalkulator interaktif dengan langkah-langkah lengkap</div>
+  </div>
+
+  <!-- INPUT CARD -->
+  <div class="card" style="animation-delay:0.1s">
+    <div class="card-title">01 — Konfigurasi Matriks</div>
+
+    <div class="size-row">
+      <span class="size-label">Ukuran matriks:</span>
+      <div class="size-btns" id="sizeBtns">
+        <button class="size-btn active" onclick="setSize(2)">2×2</button>
+        <button class="size-btn" onclick="setSize(3)">3×3</button>
+        <button class="size-btn" onclick="setSize(4)">4×4</button>
+      </div>
+    </div>
+
+    <div class="matrix-section">
+      <div>
+        <div class="matrix-label-wrap">
+          <div class="matrix-name">A</div>
+        </div>
+        <div class="matrix-bracket-wrap">
+          <div class="bracket">[</div>
+          <div class="matrix-grid" id="matrixInput"></div>
+          <div class="bracket">]</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="calculate()">Hitung Invers</button>
+      <button class="btn btn-fill" onclick="fillExample()">Contoh Isian</button>
+      <button class="btn btn-secondary" onclick="clearMatrix()">Reset</button>
+    </div>
+  </div>
+
+  <!-- ERROR -->
+  <div class="error-box" id="errorBox"></div>
+
+  <!-- RESULT SECTION -->
+  <div class="result-section" id="resultSection">
+
+    <!-- STEPS -->
+    <div class="card" style="animation-delay:0.1s">
+      <div class="card-title">02 — Langkah-Langkah Penyelesaian</div>
+      <div class="steps-container" id="stepsContainer"></div>
+    </div>
+
+    <!-- FINAL RESULT -->
+    <div class="card" style="animation-delay:0.2s">
+      <div class="card-title">03 — Hasil Akhir</div>
+      <div class="final-card" id="finalCard"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="popup-overlay" id="adOverlay">
+  <div class="ad-popup" id="adPopup">
+    <div class="ad-header">
+      <div class="ad-title">Iklan Proyek</div>
+      <div class="ad-controls">
+        <button class="window-btn" onclick="minimizeAd()" title="Minimize">−</button>
+        <button class="window-btn" onclick="maximizeAd()" title="Maximize">▢</button>
+        <button class="window-btn" onclick="closeAdPopup()" title="Close">✕</button>
+      </div>
+    </div>
+    <div class="ad-body">
+      <p>Project ini dibuat oleh:</p>
+      <ul>
+        <li>M. Jamil Salam Alfaris — 2495114041</li>
+        <li>Alfin Bachtiar — 2495114029</li>
+        <li>Khuriyatul Rizkiyah Al-Ula — 2495114031</li>
+        <li>M. Agustian Nasrullah — 2495114021</li>
+      </ul>
+      <p>Silakan klik tombol close atau minimize jika Anda ingin melanjutkan penggunaan aplikasi dengan nyaman.</p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+</body>
+</html>
